@@ -14,7 +14,8 @@ function ClickHandler () {
 
     this.pressButton = function (req, res) {
         console.log(req.params.id);
-        let ls = spawn( 'irsend', [ 'SEND_ONCE', 'remote-media', 'KEY_PAUSE' ] );
+        let button = req.params.id;
+        let ls = spawn( 'irsend', [ 'SEND_ONCE', 'remote-media', button ] );
         console.log( `stderr: ${ls.stderr.toString()}` );
         console.log( `stdout: ${ls.stdout.toString()}` );
     }
